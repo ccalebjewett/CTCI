@@ -25,4 +25,21 @@ public class Chapter1Question1Test {
         String stringWithDuplicate = largestStringOfUniqueCharacters + "0";
         assertFalse(Chapter1Question1.hasUniqueCharacters(stringWithDuplicate));
     }
+
+    @Test
+    public void testHasUniqueCharacters2() throws Exception {
+
+        StringBuffer sb = new StringBuffer();
+        for(int i = 'a'; i <= 'z'; i++) {
+            sb.append((char) i);
+        }
+        String largestStringOfUniqueCharacters = sb.toString();
+        assertTrue(Chapter1Question1.hasUniqueCharacters2(largestStringOfUniqueCharacters));
+
+        assertTrue(Chapter1Question1.hasUniqueCharacters2("abcdefg"));
+        assertTrue(Chapter1Question1.hasUniqueCharacters2("")); //it doesn't actually "have unique characters"... but at least it has no duplicates...
+        assertFalse(Chapter1Question1.hasUniqueCharacters2("aa"));
+        String stringWithDuplicate = largestStringOfUniqueCharacters + "z";
+        assertFalse(Chapter1Question1.hasUniqueCharacters2(stringWithDuplicate));
+    }
 }
